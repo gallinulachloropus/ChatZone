@@ -3,18 +3,24 @@ import socketIOClient from "socket.io-client"
 
 const useChat = () => {
     const [messages, setMessages] = useState([]) //array of messages
+    const [users, setUsers] = useState()
     const socketRef = useRef()
 
     useEffect(() => {
-        const HOST = process.env.HOST || '192.168.254.11'
+        const HOST = process.env.HOST || 'localhost'
         const PORT = process.env.PORT || '5000'
         socketRef.current = socketIOClient(`${HOST}:${PORT}`) // reference to socketiocliet
 
-        socketRef.current.on('newMessage', (fullMessage) => {
+        socketRef.current.on('newMessage', fullMessage => {
             setMessages(messages => {
                 return [...messages, fullMessage]
             })
         })
+
+        socketRef.current.on('users', num => {
+            setUsers(num)
+        })
+
 
         //cleanup
         return () => {
@@ -27,7 +33,7 @@ const useChat = () => {
         socketRef.current.emit('newMessage', fullMessage)
     }
     //return messages and sendMessage to use in chatbox
-    return { messages, sendMessage }
+    return { messages, sendMessage, users }
 }
 
 export default useChat

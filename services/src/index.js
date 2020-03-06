@@ -17,14 +17,15 @@ serve.listen(PORT, () => {
 //Start websocket server
 const io = require('socket.io')(serve)
 io.on('connection', (socket) => {
-    console.log('Connection Established...')
-
-    socket.on("newMessage", data => {
+    let connections = io.engine.clientsCount
+    console.log('Connection Established... ', connections)
+    io.emit('users', connections)
+    socket.on('newMessage', data => {
         console.log(`${data.nickname} said @ ${data.date}: `, data.message)
-        io.emit("newMessage", data)
+        io.emit('newMessage', data)
     })
 
     socket.on('disconnect', () => {
-        console.log("Disconnected...")
-    });
+        console.log('Disconnected...')
+    })
 });
