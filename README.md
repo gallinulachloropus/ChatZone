@@ -5,9 +5,9 @@ Node, Express, Websocket backend
 React + CRA frontend
 SCSS for styling
 
-#Starting server
+# Starting server
 npm run listen
 
-#Development
+# Development
 In services: npm run dev
 In client: npm run start
