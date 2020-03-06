@@ -1,0 +1,20 @@
+{
+  "name": "chat-zone",
+  "version": "1.0.0",
+  "description": "Simple chat application",
+  "main": "./services/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd services && npm run listen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gallinulachloropus/ChatZone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gallinulachloropus/ChatZone/issues"
+  },
+  "homepage": "https://github.com/gallinulachloropus/ChatZone#readme"
+}
