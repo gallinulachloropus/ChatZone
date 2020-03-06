@@ -7,9 +7,10 @@ const useChat = () => {
     const socketRef = useRef()
 
     useEffect(() => {
-        const HOST = process.env.HOST || 'localhost'
-        const PORT = process.env.PORT || '5000'
-        socketRef.current = socketIOClient(`https://chat-zone.herokuapp.com:${PORT}`) // reference to socketiocliet `${HOST}:${PORT}`
+        const HOST = window.location.hostname
+        const PORT = process.env.PORT || 5000
+        console.log(`Connected to ${HOST}`)
+        socketRef.current = socketIOClient(`${HOST}:${PORT}`) // reference to socketiocliet `${HOST}:${PORT}`
 
         socketRef.current.on('newMessage', fullMessage => {
             setMessages(messages => {
