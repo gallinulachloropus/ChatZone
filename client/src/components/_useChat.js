@@ -7,7 +7,7 @@ const useChat = () => {
     const ioRef = useRef()
 
     useEffect(() => {
-        const HOST = window.location.href.includes('http') ? window.location.hostname + ':5000' : window.location.hostname //lousy way of determining if in dev environment
+        const HOST =  window.location.hostname
         console.log(`Connected to ${HOST}`)
         ioRef.current = socketIOClient(HOST) // reference to socketiocliet
 
