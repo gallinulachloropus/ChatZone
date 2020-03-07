@@ -10,7 +10,7 @@ const ChatBox = ({ onSendMessage, nickname }) => {
     }
 
     return <div className="chatbox-container">
-        <p>{nickname}: </p>
+        <p className="nickname">{nickname}: </p>
         <textarea
             rows="2"
             placeholder="Enter a message..."

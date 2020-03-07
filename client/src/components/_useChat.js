@@ -7,8 +7,8 @@ const useChat = () => {
     const socketRef = useRef()
 
     useEffect(() => {
-        const HOST = window.location.hostname
         const PORT = process.env.PORT || 5000
+        const HOST = `${window.location.hostname}`
         console.log(`Connected to ${HOST}`)
         socketRef.current = socketIOClient(`${HOST}`) // reference to socketiocliet `${HOST}:${PORT}`
 

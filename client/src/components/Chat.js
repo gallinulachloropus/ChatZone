@@ -17,7 +17,6 @@ const Chat = () => {
     }
   }, [])
 
-
   useEffect(() => {
     if (nickname) {
       localStorage.setItem('nickname', nickname)
@@ -26,8 +25,6 @@ const Chat = () => {
 
   return (
     <div className="App">
-
-
       <Settings setNickname={setNickname} />
       <Messages messages={messages} users={users} />
       <ChatBox
