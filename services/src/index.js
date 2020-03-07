@@ -1,12 +1,9 @@
 const express = require('express')
 const http = require('http')
-const cors = require('cors')
 
 const app = express()
 const serve = http.Server(app)
 const PORT = process.env.PORT || '5000'
-
-app.use(cors)
 
 //display react app at root
 app.use(express.static('../client/build'))
