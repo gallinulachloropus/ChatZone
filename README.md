@@ -2,8 +2,11 @@
 Simple chat application
 
 Node, Express, Websocket backend
+
 React + CRA frontend
+
 SCSS for styling
+
 
 # Starting server
 npm run listen

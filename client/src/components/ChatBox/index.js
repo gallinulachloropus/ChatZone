@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ChatBox = ({ onSendMessage, nickname }) => {
+const ChatBox = ({ onSendMessage, nickname, color }) => {
     const [message, setMessage] = useState('')
 
     //cannot be normal form due to enter behavior on textarea
@@ -10,7 +10,7 @@ const ChatBox = ({ onSendMessage, nickname }) => {
     }
 
     return <div className="chatbox-container">
-        <p className="nickname">{nickname}: </p>
+        <p className="nickname" style={{ color }}>{nickname}: </p>
         <textarea
             rows="2"
             placeholder="Enter a message..."

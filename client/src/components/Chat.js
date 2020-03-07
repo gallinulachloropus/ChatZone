@@ -8,12 +8,15 @@ import Settings from './Settings'
 
 const Chat = () => {
   const [nickname, setNickname] = useState('Anonymous')
+  const [color, setColor] = useState('Black')
   const { messages, sendMessage, users } = useChat() // pull state and function to emit from useChat hook
 
   useEffect(() => {
     if (localStorage.getItem('nickname')) {
-      const nick = localStorage.getItem('nickname') || ''
-      setNickname(nick)
+      const n = localStorage.getItem('nickname') || ''
+      const c = localStorage.getItem('color') || ''
+      setColor(c)
+      setNickname(n)
     }
   }, [])
 
@@ -21,20 +24,25 @@ const Chat = () => {
     if (nickname) {
       localStorage.setItem('nickname', nickname)
     }
+    if (color) {
+      localStorage.setItem('color', color)
+    }
   })
 
   return (
     <div className="App">
-      <Settings setNickname={setNickname} />
+      <Settings setNickname={setNickname} color={color} setColor={setColor} />
       <Messages messages={messages} users={users} />
       <ChatBox
         nickname={nickname}
+        color={color}
         onSendMessage={message => {
           sendMessage(
             {
               message,
               date: new Date(Date.now()).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true }),
-              nickname
+              nickname,
+              color
             }
           )
         }} />
