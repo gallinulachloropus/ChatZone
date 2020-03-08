@@ -9,7 +9,6 @@ const useChat = () => {
 
     useEffect(() => {
         const title = document.title
-        //const DEV = window.location.hostname + ':5000'
         const HOST = window.location.hostname
         console.log(`Connected to ${HOST}`)
         ioRef.current = socketIOClient(HOST) // reference to socketiocliet

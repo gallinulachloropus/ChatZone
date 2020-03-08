@@ -21,7 +21,7 @@ const Messages = ({ storedMessages, messages, users }) => {
 
     return (
         <div className="messages">
-            <h2>ChatZone</h2>
+            <h1>ChatZone</h1>
             <h3>{users} user(s) online</h3>
             <ul>
                 <li><em>Welcome to the chat.</em></li>

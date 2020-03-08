@@ -32,7 +32,7 @@ const Settings = ({ nickname, setNickname, color, setColor }) => {
                 <button><span role="img" aria-label="Save">💾</span> Save Settings</button>
             </form>
         </div >
-    ) : <button className='settings-button' onClick={e => setToggle(!settingsToggle)}><span role="img" aria-label="Settings">🔧</span></button>
+    ) : <button className='settings-button' onClick={e => setToggle(!settingsToggle)}><span role="img" aria-label="Settings">⚙️</span></button>
 }
 
 export default Settings
