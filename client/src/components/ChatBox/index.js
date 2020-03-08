@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 const ChatBox = ({ onSendMessage, nickname, color }) => {
     const [message, setMessage] = useState('')
-
-    //cannot be normal form due to enter behavior on textarea
     const submit = () => {
-        if (message) { onSendMessage(message) }
+        if (message) {
+            if (message.length < 300) {
+                onSendMessage(message)
+            } else { alert('Message must be under 300 characters.') }
+        }
         setMessage('')
     }
+    const chat = useRef()
 
     return <div className="chatbox-container">
         <p className="nickname" style={{ color }}>{nickname}: </p>
         <textarea
+            ref={chat}
             rows="2"
             placeholder="Enter a message..."
             value={message}

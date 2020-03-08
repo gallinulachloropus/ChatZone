@@ -6,7 +6,7 @@ const Settings = ({ nickname, setNickname, color, setColor }) => {
     const [settingsToggle, setToggle] = useState(false)
     const [colorForm, setColorForm] = useState(color)
 
-    const colors = ['Black', 'Red', 'Blue', 'Green', 'Teal', 'Purple', 'HotPink']
+    const colors = ['Black', 'Red', 'Blue', 'Green', 'Teal', 'Purple', 'HotPink', 'Orange']
     const colorOptions = colors.map((color, i) => <option key={i} value={color} style={{ color, fontWeight: 'bold' }}>{color}</option>)
     return settingsToggle ? (
         <div className="settings">
@@ -16,6 +16,7 @@ const Settings = ({ nickname, setNickname, color, setColor }) => {
                 if (nicknameForm) { setNickname(nicknameForm) }
                 setColor(colorForm)
                 setNicknameForm('')
+                setToggle(!settingsToggle)
             }} >
                 <input
                     type="text"
@@ -24,7 +25,8 @@ const Settings = ({ nickname, setNickname, color, setColor }) => {
                     onChange={e => setNicknameForm(e.target.value)} />
                 <select
                     onChange={e => setColorForm(e.target.value)}
-                    value={colorForm}>
+                    value={colorForm}
+                >
                     {colorOptions}
                 </select>
                 <button><span role="img" aria-label="Save">💾</span> Save Settings</button>

@@ -15,11 +15,31 @@ serve.listen(PORT, () => {
 
 //Start websocket server
 const io = require('socket.io')(serve)
+//object containing stored messages
+const storedMessages = {
+    messages: [],
+    trim() {
+        if (this.messages.length > 5) {
+            this.messages.shift()
+        }
+    },
+    store(data) {
+        this.messages = [...this.messages, data]
+        this.trim()
+    }
+}
+
 io.on('connection', (socket) => {
     console.log('Connection Established... ', io.engine.clientsCount)
     io.emit('users', io.engine.clientsCount)
+    socket.emit('prevMsg', storedMessages.messages)
+    socket.on('id', data => {
+        console.log(data)
+    })
     socket.on('newMessage', data => {
         console.log(`${data.nickname} said @ ${data.date} ${data.color}: `, data.message)
+        storedMessages.store(data)
+        console.log(storedMessages.messages)
         io.emit('newMessage', data)
     })
 

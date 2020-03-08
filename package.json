@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/gallinulachloropus/ChatZone/issues"
   },
-  "homepage": "https://github.com/gallinulachloropus/ChatZone#readme"
+  "homepage": "https://github.com/gallinulachloropus/ChatZone#readme",
+  "devDependencies": {}
 }

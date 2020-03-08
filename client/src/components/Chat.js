@@ -9,7 +9,7 @@ import Settings from './Settings'
 const Chat = () => {
   const [nickname, setNickname] = useState('Anonymous')
   const [color, setColor] = useState('Black')
-  const { messages, sendMessage, users } = useChat() // pull state and function to emit from useChat hook
+  const { messages, sendMessage, users, storedMessages } = useChat() // pull state and function to emit from useChat hook
 
   useEffect(() => {
     if (localStorage.getItem('nickname')) {
@@ -32,7 +32,7 @@ const Chat = () => {
   return (
     <div className="App">
       <Settings setNickname={setNickname} color={color} setColor={setColor} />
-      <Messages messages={messages} users={users} />
+      <Messages storedMessages={storedMessages} messages={messages} users={users} />
       <ChatBox
         nickname={nickname}
         color={color}

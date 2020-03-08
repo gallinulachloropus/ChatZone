@@ -1,8 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
-  transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
 }
 
 * button::-moz-focus-inner {
@@ -22,6 +20,8 @@
 }
 
 body {
+  -webkit-transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
+  transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 1.25vw;
   color: #333;
@@ -40,35 +40,37 @@ body {
   }
 }
 
-div.App {
+body div.App {
   display: block;
   margin: 0;
   padding: 0;
 }
 
-div.App button {
+body div.App button {
   -webkit-box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
           box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
   border: none;
+  -webkit-transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
+  transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
   padding: 1rem;
   margin: 0.75rem;
   background: white;
   border: none;
 }
 
-div.App button:hover {
+body div.App button:hover {
   background: #eee;
   cursor: pointer;
 }
 
-div.App button:active {
+body div.App button:active {
   -webkit-box-shadow: inset -2px -2px 10px #fff, inset 2px 2px 10px rgba(0, 0, 0, 0.15);
           box-shadow: inset -2px -2px 10px #fff, inset 2px 2px 10px rgba(0, 0, 0, 0.15);
   background: #bbb;
 }
 
-div.App select {
+body div.App select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -82,44 +84,46 @@ div.App select {
   margin: 0.5rem;
 }
 
-div.App select:hover {
+body div.App select:hover {
   background: #eee;
   cursor: pointer;
 }
 
-div.App select:active {
+body div.App select:active {
   -webkit-box-shadow: inset -2px -2px 10px #fff, inset 2px 2px 10px rgba(0, 0, 0, 0.15);
           box-shadow: inset -2px -2px 10px #fff, inset 2px 2px 10px rgba(0, 0, 0, 0.15);
   background: #bbb;
 }
 
-div.App input[type="text"] {
+body div.App input[type="text"] {
+  -webkit-transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
+  transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
   font-size: 1.25rem;
   border: none;
   margin: 1rem;
   border-bottom: 3px solid grey;
 }
 
-div.App input[type="text"]:focus {
+body div.App input[type="text"]:focus {
   border-bottom: 3px solid skyblue;
 }
 
-div.App div {
+body div.App div {
   margin: 1rem;
 }
 
 @media screen and (max-width: 650px) {
-  div.App div {
+  body div.App div {
     margin: 0.5rem;
   }
 }
 
-div.App button.settings-button {
+body div.App button.settings-button {
   font-size: 1.75rem;
   padding: 1.2rem;
 }
 
-div.App div.settings {
+body div.App div.settings {
   -webkit-box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
           box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
@@ -130,13 +134,13 @@ div.App div.settings {
   width: max-content;
 }
 
-div.App div.settings input[type="text"] {
+body div.App div.settings input[type="text"] {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
 
-div.App div.settings form {
+body div.App div.settings form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,7 +154,7 @@ div.App div.settings form {
 }
 
 @media screen and (max-width: 650px) {
-  div.App div.settings form {
+  body div.App div.settings form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -160,7 +164,7 @@ div.App div.settings form {
   }
 }
 
-div.App div.chatbox-container {
+body div.App div.chatbox-container {
   -webkit-box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
           box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
@@ -181,19 +185,21 @@ div.App div.chatbox-container {
   margin: auto;
 }
 
-div.App div.chatbox-container p.nickname {
+body div.App div.chatbox-container p.nickname {
   margin: 1rem;
   font-size: 1.25rem;
   font-weight: bold;
 }
 
 @media screen and (max-width: 650px) {
-  div.App div.chatbox-container p.nickname {
+  body div.App div.chatbox-container p.nickname {
     display: none;
   }
 }
 
-div.App div.chatbox-container textarea {
+body div.App div.chatbox-container textarea {
+  -webkit-transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
+  transition: all 250ms cubic-bezier(0.1, 0.3, 0.1, 1.3);
   border: none;
   border-bottom: 3px solid grey;
   width: 60vw;
@@ -202,23 +208,23 @@ div.App div.chatbox-container textarea {
   display: block;
 }
 
-div.App div.chatbox-container textarea:focus {
+body div.App div.chatbox-container textarea:focus {
   border-bottom: 3px solid skyblue;
 }
 
 @media screen and (max-width: 650px) {
-  div.App div.chatbox-container textarea {
+  body div.App div.chatbox-container textarea {
     width: 40vw;
   }
 }
 
 @media screen and (max-width: 650px) {
-  div.App div.chatbox-container {
+  body div.App div.chatbox-container {
     width: 90%;
   }
 }
 
-div.App div.messages {
+body div.App div.messages {
   -webkit-box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
           box-shadow: -2px -6px 15px #eee, 2px 6px 33px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
@@ -226,7 +232,7 @@ div.App div.messages {
   padding: 2rem;
 }
 
-div.App div.messages ul {
+body div.App div.messages ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -234,17 +240,18 @@ div.App div.messages ul {
   overflow-y: auto;
 }
 
-div.App div.messages ul li {
+body div.App div.messages ul li {
+  overflow-wrap: break-word;
   padding: 1rem;
   background: whitesmoke;
 }
 
-div.App div.messages ul li:nth-child(odd) {
+body div.App div.messages ul li:nth-child(odd) {
   background: lightgrey;
 }
 
 @media screen and (max-width: 650px) {
-  div.App div.messages {
+  body div.App div.messages {
     padding: 1rem;
   }
 }
